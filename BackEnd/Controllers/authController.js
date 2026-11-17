@@ -1,8 +1,7 @@
 const User = require("../Models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
-const JWT_SECRET = process.env.JWT_SECRET || "supersecretjwtkey";
+const { JWT_SECRET } = require("../config/jwt");
 
 // Helper to generate token and set cookie
 const generateTokenAndSetCookie = (res, userId) => {
